@@ -4,7 +4,7 @@ createApp({
   data() {
     return {
         isClick: 0,
-        autoPlay: 0,
+        timer: 0,
         images: [
             {
                 image: 'img/01.webp',
