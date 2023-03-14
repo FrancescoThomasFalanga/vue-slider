@@ -3,6 +3,8 @@ const { createApp } = Vue
 createApp({
   data() {
     return {
+        isClick: 0,
+        autoPlay: 0,
         images: [
             {
                 image: 'img/01.webp',
@@ -31,6 +33,29 @@ createApp({
             }
         ],
     }
+  },
+
+  methods: {
+    nextSlide() {
+        this.isClick--;
+
+        if (this.isClick < 0) {
+
+            this.isClick = this.images.length - 1;
+    
+        }
+    },
+
+    prevSlide() {
+        this.isClick++;
+
+        if (this.isClick > this.images.length - 1) {
+
+            this.isClick = 0;
+    
+        }
+
+    },
   },
   
 }).mount('#app')

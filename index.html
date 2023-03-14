@@ -18,6 +18,76 @@
 
     <div id="app">
 
+        <div id="app">
+
+            <img src="img/astronaut.jpg" alt="" class="bg-image">
+    
+    
+            <div class="buttons">
+        
+                <button type="button" class="btn" id="start-button">
+                    <strong>START AUTOPLAY</strong>
+                    <div id="container-stars">
+                      <div id="stars"></div>
+                    </div>
+                  
+                    <div id="glow">
+                      <div class="circle"></div>
+                      <div class="circle"></div>
+                    </div>
+                  </button>
+                <button type="button" class="btn" id="stop-button">
+                    
+                <strong>STOP AUTOPLAY</strong>
+                <div id="container-stars">
+                    <div id="stars"></div>
+                </div> 
+                <div id="glow">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+                </button>
+        
+            </div>
+        
+            <div class="buttons">
+        
+                <button class="autoplay" id="reverse-button">REVERSE-PLAY</button>
+        
+            </div>
+        
+            <div class="container">
+        
+                <div class="main-image-container">
+            
+                    <img :src="images[isClick].image" alt="" id="main-image">
+                    <h2>{{ images[isClick].title }}</h2>
+                    <span>{{ images[isClick].text }}</span>
+            
+                </div>
+        
+        
+        
+                <div class="thumbnails">
+        
+                    <div @click="nextSlide()" id="up-arrow">
+                        <i class="fa-solid fa-angle-up"></i>
+                    </div>
+        
+                    <div id="thumbnails-container">
+                        <img v-for="(img, index) in images" :src="images[index].image" :class="index == isClick ? 'active' : '' " class="thumbnail">
+                    </div>
+        
+                    <div @click="prevSlide()" id="down-arrow">
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
+        
+                </div>
+        
+            </div>
+    
+        </div>
+
     </div>
 
     
