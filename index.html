@@ -25,7 +25,7 @@
     
             <div class="buttons">
         
-                <button type="button" class="btn" id="start-button">
+                <button @click="startTimer()" type="button" class="btn" id="start-button">
                     <strong>START AUTOPLAY</strong>
                     <div id="container-stars">
                       <div id="stars"></div>
@@ -36,7 +36,7 @@
                       <div class="circle"></div>
                     </div>
                   </button>
-                <button type="button" class="btn" id="stop-button">
+                <button @click="stopTimer()" type="button" class="btn" id="stop-button">
                     
                 <strong>STOP AUTOPLAY</strong>
                 <div id="container-stars">
@@ -52,7 +52,7 @@
         
             <div class="buttons">
         
-                <button class="autoplay" id="reverse-button">REVERSE-PLAY</button>
+                <button @click="reverseTimer()" class="autoplay" id="reverse-button">REVERSE-PLAY</button>
         
             </div>
         
@@ -70,7 +70,7 @@
         
                 <div class="thumbnails">
         
-                    <div @click="nextSlide()" id="up-arrow">
+                    <div @click="nextSlide(), stopTimer()" id="up-arrow">
                         <i class="fa-solid fa-angle-up"></i>
                     </div>
         
@@ -78,7 +78,7 @@
                         <img v-for="(img, index) in images" :src="images[index].image" :class="index == isClick ? 'active' : '' " class="thumbnail">
                     </div>
         
-                    <div @click="prevSlide()" id="down-arrow">
+                    <div @click="prevSlide(), stopTimer()" id="down-arrow">
                         <i class="fa-solid fa-angle-down"></i>
                     </div>
         

@@ -43,7 +43,8 @@ createApp({
 
             this.isClick = this.images.length - 1;
     
-        }
+        };
+
     },
 
     prevSlide() {
@@ -53,8 +54,34 @@ createApp({
 
             this.isClick = 0;
     
-        }
+        };
 
+
+    },
+    startTimer() {
+
+        this.timer = setInterval(() => {
+    
+            this.nextSlide();
+            
+        }, 3000);
+    
+    },
+    reverseTimer() {
+
+        this.stopTimer();
+
+        this.timer = setInterval(() => {
+    
+            this.prevSlide()
+            
+        }, 3000);
+    
+    },
+    stopTimer() {
+
+        clearInterval(this.timer);
+    
     },
   },
   
