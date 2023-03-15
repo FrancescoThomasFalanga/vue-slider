@@ -68,9 +68,9 @@
         
         
         
-                <div class="thumbnails">
+                <div class="thumbnails" @mouseover="stopTimer()" @mouseleave="startTimer()">
         
-                    <div @click="nextSlide(), stopTimer()" id="up-arrow" @mouseover="stopTimer()" @mouseleave="startTimer()">
+                    <div @click="nextSlide(), stopTimer()" id="up-arrow">
                         <i class="fa-solid fa-angle-up"></i>
                     </div>
         
@@ -78,7 +78,7 @@
                         <img @click="isClick = index" v-for="(img, index) in images" :src="images[index].image" :class="index == isClick ? 'active' : '' " class="thumbnail">
                     </div>
         
-                    <div @click="prevSlide(), stopTimer()" id="down-arrow" @mouseover="stopTimer()" @mouseleave="startTimer()">
+                    <div @click="prevSlide(), stopTimer()" id="down-arrow">
                         <i class="fa-solid fa-angle-down"></i>
                     </div>
         

@@ -60,9 +60,11 @@ createApp({
     },
     startTimer() {
 
+        this.stopTimer();
+
         this.timer = setInterval(() => {
     
-            this.nextSlide();
+            this.prevSlide();
             
         }, 3000);
     
@@ -73,7 +75,7 @@ createApp({
 
         this.timer = setInterval(() => {
     
-            this.prevSlide()
+            this.nextSlide()
             
         }, 3000);
     
