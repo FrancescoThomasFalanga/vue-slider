@@ -84,5 +84,11 @@ createApp({
     
     },
   },
+
+  created: function(){
+
+    this.startTimer()
+
+  },
   
 }).mount('#app')
